@@ -1,0 +1,66 @@
+.detail-page {
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  min-height: 100vh;
+}
+
+.detail-page section{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-page a {
+  margin: 2rem auto;
+}
+
+.container, .poster, .poster img {
+  border-radius: 20px 0;
+}
+
+.container {
+  display: flex;
+  background-color: white;
+  width: 60rem;
+}
+
+.poster img {
+  height: 100%;
+}
+
+.detail {
+  padding: 1.5rem 2rem;
+}
+
+.detail p {
+  margin: 2rem 0
+}
+
+.more-info  {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.more-info div {
+  margin: 2rem;
+}
+
+.actors h3 {
+  margin-bottom: 1rem;
+}
+
+@media(max-width: 425px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+  .poster img {
+    width: 100%;
+  }
+  .more-info div {
+    margin: 1rem;
+  }
+}

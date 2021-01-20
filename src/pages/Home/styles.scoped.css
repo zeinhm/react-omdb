@@ -1,0 +1,13 @@
+.home-page > section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.loading-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 10rem;
+}

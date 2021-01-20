@@ -1,0 +1,11 @@
+.modal-component {
+  background-color: #fff;
+  box-shadow: -0.6875rem 0.5625rem 1.3125rem rgba(173, 182, 217, 0.170884);
+  border-radius: 0.3125rem;
+  margin: auto;
+  max-width: 34.125rem;
+  padding: 2rem 2.8125rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

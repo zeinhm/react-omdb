@@ -1,0 +1,102 @@
+.search-box {
+  margin: 0 auto;
+  position: relative;
+  width: 20rem;
+}
+.search-input {
+  border: 4px solid transparent;
+  border-radius: 10px 0 ;
+  box-shadow: 0.6875rem 0.5625rem 1.3125rem rgba(173, 182, 217, 0.5);
+  font-size: 1rem;
+  padding: 1rem;
+  transition: width 0.3s;
+  width: 100%;
+}
+.search-input:focus {
+  border: 1px solid #08a1b6;
+  outline: none;
+  width: 100%;
+}
+.search-btn {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: 0;
+  height: 100%;
+  opacity: 0.2;
+  position: absolute;
+  right: 1rem;
+  text-indent:-999px;
+  top: 50%;
+  transform: translateY(-20%);
+  width: 1.5rem;
+}
+
+.search-btn.spinner-inactive {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAACnElEQVR4AcXZsUsbYRjH8e+dh2s1SyAGJwMJuDj1BIcEhJQIOnTq5F+QOf0jIq79A7oFh7aYyVBEkaZDC3awECc1AUXRIqUQotfFocnjJe/dk+b9PKP65Md7z13ee3Uwk2SNHKmngs5TnbDLJQqjA+RYZ4OXuDzvkSYf+cAJ44fPAYFhHeAzVhlqBBGrRoax8KjSJYhRXap4KCVoECiqQQKFLC0CZbXIElOBOwJ9cUchzm2Y5QsveN4tdfY4o00HSDHHPKuUmOV5v/D5SSSJ0MXfIY+HBB55dkIvRIIIvJDR28dnFJ/9kHH0MFaVDehRxlSZnuxAFUMZunKQKBJFUQ4wXTIYqcmPZ5GoFmUEahjw5eJTJI6ivBD4jCS/csrEVZZfU4yQk5OPhrwjcoRygQ0GVdCQf73OUEfisaMkHk1HDJHkYeDX82jlBzo+kCSEyxruwDP/EK1DbsWnhHDFgNTpodWjLgY9NECKfnvoyS4p8wBngN5Z/ABtQK8dP0AH0OuYB5iMqfAAMque7HJtHmAOPdnlxjzAPHqyy5V5gFX0ZJfj8AAn9CvhoeVRol8zPMAuj/xrlhW0Vpg1D3ApflhGR3b4wTlDvI24i4u+w9y0uyVrM213U1qxuy2/Z8bui8m23VezgGW7L6cBLdIWXs9FBAsHFCLCJI9opFMKXEzkkEp/IbK0bEdI0LARQRzVWoigPKy+Z5tlWooIiuP6NhVmAEiPNwLkqHDEw5CGx2wyDQDRI8T7l80U19xwxTFNmpwzKM1nFsyeCw7jFymCAxYjrHDp8r9cUOCUYRZ4Bw6AxVV47QJYXIVXLliNsOSC1Qh/XLAa4ZuDmmIcH1l2AaytwhZfmaAkn/qOb7eYBofJekOJJX7znfccAvwFyB3OeNys7d4AAAAASUVORK5CYII=");
+}
+
+.search-btn.spinner-active {
+  background-image: url('../../../assets/spinner.svg');
+}
+
+.search-btn:hover {
+  cursor: pointer;
+  opacity: 0.4;
+  outline: none;
+}
+.search-btn:focus {
+  opacity: 0.6;
+  outline: none;
+}
+
+ul.options {
+  background: white;
+  display: block;
+  list-style: none;
+  transition: width 0.3s;
+  margin: auto;
+  position: absolute;
+  top: 100%;
+  width: 20rem;
+}
+
+ul.options li {
+  background: white;
+  border-radius: 2px;
+  box-shadow: -0.75rem 0.5rem 1.25rem rgba(173, 182, 217, 0.170884);
+  display: block;
+  margin: 10px auto;
+  font-size: 1rem;
+  padding: 10px;
+  width: 100%;
+}
+
+ul.options li:nth-last-child(1) {
+  margin-bottom: 0;
+  position: relative;
+}
+
+ul.options li:nth-last-child(1) span {
+  position: absolute;
+  right: 1rem;
+}
+
+ul.options li:hover {
+  cursor: pointer;
+  font-size: 1.125rem;
+  transition: 0.1s all;
+}
+
+ul.options li.active {
+  background: rgba(173, 182, 217, 0.25);
+  font-size: 1.125rem;
+}
+
+.spinner {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-25%);
+  width: fit-content;
+}

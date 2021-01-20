@@ -1,0 +1,72 @@
+.card-movie {
+  background-color: #FFFFFF;
+  border-radius: 20px 0;
+  box-shadow: 0.6875rem 0.5625rem 1.3125rem rgba(173, 182, 217, 0.5);
+  margin: 2rem 0;
+  padding: 0 0 1rem;
+  width: 15.625rem;
+}
+
+.card-movie figure {
+  border-radius: 15px 0;
+}
+
+.card-movie figure img {
+  border-radius: 15px 0 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.card-movie figcaption {
+  margin: 1rem;
+  text-align: center;
+}
+
+.card-movie figure > button {
+  background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  border: none;
+  border-radius: 10px 0;
+  color: #fff;
+  display: block;
+  height: 2.5rem;
+  margin: 0 5%;
+  padding: 0.4rem;
+  text-align: center;
+  width: 90%;
+}
+
+.card-movie figure > button:hover {
+  background: linear-gradient(to bottom right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.modal-poster {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5rem;
+  padding: 0;
+  text-align: center;
+  width: fit-content;
+}
+
+.modal-poster img {
+  width: 25rem;
+}
+
+.modal-poster button {
+  height: 3rem;
+}
+
+.modal-poster button:hover {
+  cursor: pointer;
+}
+
+@media(max-width: 424px) {
+  .modal-poster img {
+    width: 18.5rem;
+  }
+}

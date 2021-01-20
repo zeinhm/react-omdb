@@ -1,0 +1,33 @@
+.loading-spinner {
+  height: 100%; 
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.loading-spinner > div {
+  animation: spin 2s linear infinite;
+  border: 16px solid #f3f3f3;
+  border-bottom: 16px solid #3498db;
+  border-radius: 50%;
+  border-right: 16px solid #3498db;
+  border-top: 16px solid #3498db;
+  height: 150px;
+  padding: .5rem;
+  position: absolute;
+  right: 50%;
+  top: 30vh;
+  transform: translate(-50%);
+  width: 150px;
+  -webkit-animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

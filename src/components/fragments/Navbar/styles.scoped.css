@@ -1,0 +1,36 @@
+.navbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto 2rem;
+  padding: 1rem;
+  width: fit-content;
+}
+
+.navbar a {
+  align-items: center;
+  background: linear-gradient(to right top, #16BFFD 0%, #CB3066  90%);
+  border-radius: 10px 0;
+  box-shadow: 0 1px 5px rgba(199, 119, 185, 0.75);
+  color: #fff;
+  display: flex;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.navbar a:hover {
+  box-shadow: 0 4px 8px rgb(209, 107, 165);
+  color: #fff;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.navbar span {
+  align-items: center;
+  display: flex;
+}
+
+.navbar a img {
+  height: 1.5rem;
+}
