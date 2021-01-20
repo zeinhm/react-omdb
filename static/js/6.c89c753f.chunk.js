@@ -1,0 +1,2 @@
+(this["webpackJsonpomdb-client"]=this["webpackJsonpomdb-client"]||[]).push([[6],{122:function(t,e,n){"use strict";n.r(e),n.d(e,"default",(function(){return o}));var c=n(2),i=(n(0),n(26));function o(){return Object(c.jsxs)("section",{children:[Object(c.jsx)("h2",{children:"Page not found"}),Object(c.jsx)("p",{children:Object(c.jsx)(i.b,{to:"/",children:"Back to home"})})]})}}}]);
+//# sourceMappingURL=6.c89c753f.chunk.js.map

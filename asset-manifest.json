@@ -1,0 +1,36 @@
+{
+  "files": {
+    "static/js/0.b08ea3fa.chunk.js": "/react-omdb/static/js/0.b08ea3fa.chunk.js",
+    "static/js/0.b08ea3fa.chunk.js.map": "/react-omdb/static/js/0.b08ea3fa.chunk.js.map",
+    "main.css": "/react-omdb/static/css/main.cf41904e.chunk.css",
+    "main.js": "/react-omdb/static/js/main.f325d9f7.chunk.js",
+    "main.js.map": "/react-omdb/static/js/main.f325d9f7.chunk.js.map",
+    "runtime-main.js": "/react-omdb/static/js/runtime-main.256355e2.js",
+    "runtime-main.js.map": "/react-omdb/static/js/runtime-main.256355e2.js.map",
+    "static/js/3.6873f305.chunk.js": "/react-omdb/static/js/3.6873f305.chunk.js",
+    "static/js/3.6873f305.chunk.js.map": "/react-omdb/static/js/3.6873f305.chunk.js.map",
+    "static/css/4.fd806615.chunk.css": "/react-omdb/static/css/4.fd806615.chunk.css",
+    "static/js/4.e1d9e495.chunk.js": "/react-omdb/static/js/4.e1d9e495.chunk.js",
+    "static/js/4.e1d9e495.chunk.js.map": "/react-omdb/static/js/4.e1d9e495.chunk.js.map",
+    "static/css/5.32a8e9d1.chunk.css": "/react-omdb/static/css/5.32a8e9d1.chunk.css",
+    "static/js/5.fe2b9006.chunk.js": "/react-omdb/static/js/5.fe2b9006.chunk.js",
+    "static/js/5.fe2b9006.chunk.js.map": "/react-omdb/static/js/5.fe2b9006.chunk.js.map",
+    "static/js/6.c89c753f.chunk.js": "/react-omdb/static/js/6.c89c753f.chunk.js",
+    "static/js/6.c89c753f.chunk.js.map": "/react-omdb/static/js/6.c89c753f.chunk.js.map",
+    "static/js/7.e72537af.chunk.js": "/react-omdb/static/js/7.e72537af.chunk.js",
+    "static/js/7.e72537af.chunk.js.map": "/react-omdb/static/js/7.e72537af.chunk.js.map",
+    "index.html": "/react-omdb/index.html",
+    "static/css/4.fd806615.chunk.css.map": "/react-omdb/static/css/4.fd806615.chunk.css.map",
+    "static/css/5.32a8e9d1.chunk.css.map": "/react-omdb/static/css/5.32a8e9d1.chunk.css.map",
+    "static/css/main.cf41904e.chunk.css.map": "/react-omdb/static/css/main.cf41904e.chunk.css.map",
+    "static/js/3.6873f305.chunk.js.LICENSE.txt": "/react-omdb/static/js/3.6873f305.chunk.js.LICENSE.txt",
+    "static/media/default-poster.jpg": "/react-omdb/static/media/default-poster.3f971516.jpg",
+    "static/media/styles.scoped.css": "/react-omdb/static/media/spinner.6305d3eb.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.256355e2.js",
+    "static/js/3.6873f305.chunk.js",
+    "static/css/main.cf41904e.chunk.css",
+    "static/js/main.f325d9f7.chunk.js"
+  ]
+}
