@@ -85,6 +85,6 @@ ModalPoster.defaultProps = {
 
 ModalPoster.propTypes = {
   defaultPoster: PropTypes.func,
-  handleClose: PropTypes.func,
+  onClose: PropTypes.func,
   open: PropTypes.bool,
 };

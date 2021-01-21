@@ -8,6 +8,8 @@ import Search from '../../components/fragments/Search'
 import Navbar from '../../components/fragments/Navbar'
 import { getAutoComplete, getMovies, getShownMovies, successAction } from '../../modules/Home/actions'
 
+import './styles.scoped.css'
+
 export default function Home() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -44,12 +46,9 @@ export default function Home() {
   }, [isBottom]);
 
   useEffect(() => {
-    if (search && keyword) {
-      dispatch(getAutoComplete({ page: 1, search }))
-    } else {
-      setAutoCompleteList([])
-      history.push('/')
-    }
+    console.log(search)
+    console.log(keyword)
+    if (search && keyword) dispatch(getAutoComplete({ page: 1, search }))
   }, [search, keyword])
 
   useEffect(() => {
@@ -75,7 +74,7 @@ export default function Home() {
 
   const onChange = ({ value }) => {
     setKeyword(value)  
-    const newQuery = queryString.stringify({ page: 1, search: value });
+    const newQuery = queryString.stringify({ search: value });
     history.push(`?${newQuery}`);
   }
 

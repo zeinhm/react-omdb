@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import { ModalContext } from '../../contexts';
 
 export default function PageBase({ children }) {
-  const { content, setContent } = useContext(ModalContext);
+  const contextModal = useContext(ModalContext);
 
   useEffect(() => {
     const body = document.getElementsByTagName('body')[0];
-    if (content) {
+    if (contextModal?.content) {
       body.className = 'modal-open';
     }
-    if(!content){
+    if(!contextModal?.content){
       body.className = '';
     }
-  }, [content]);
+  }, [contextModal?.content]);
 
   return (
     <>
       {children}
-      <div className="modal">{content}</div>
+      <div className="modal">{contextModal?.content}</div>
     </>
   );
 }

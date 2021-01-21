@@ -1,7 +1,7 @@
 import { FAILED, LOADING, SUCCESS } from './constants';
 
 const initialState = {
-  dataMovieDetail: [],
+  dataMovieDetail: {},
   isLoadingMovieDetail: false,
   message: ''
 };

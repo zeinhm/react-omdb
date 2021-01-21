@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/fragments/DetailMovie DetailMovie 1`] = `
+<main
+  className="detail-card"
+>
+  <a
+    href="http://www.omdbapi.com/"
+    target="_blank"
+  >
+    Powered by OMDb API
+  </a>
+  <div
+    className="loading-wrapper"
+  >
+    <Loader
+      color="#d16ba5"
+      css=""
+      loading={true}
+      size={15}
+    />
+  </div>
+</main>
+`;

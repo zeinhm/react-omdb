@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/fragments/Navbar Navbar 1`] = `
+<div
+  className="navbar"
+>
+  <Link
+    to="/"
+  >
+    <span>
+      <img
+        alt=""
+        src="react-logo.png"
+      />
+    </span>
+     React OMDb
+  </Link>
+</div>
+`;

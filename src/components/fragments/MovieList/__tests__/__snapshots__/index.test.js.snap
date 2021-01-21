@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/fragments/MovieList ModalPoster 1`] = `
+<Modal
+  className="modal-poster"
+  onClose={[Function]}
+  open={false}
+>
+  <img
+    alt="Poster"
+    onError={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  >
+    Close
+  </button>
+</Modal>
+`;
+
+exports[`src/components/fragments/MovieList MovieList 1`] = `
+<div>
+  <ul />
+  <ModalPoster
+    defaultPoster={[Function]}
+    imgSrc=""
+    onClose={[Function]}
+    open={false}
+  />
+</div>
+`;

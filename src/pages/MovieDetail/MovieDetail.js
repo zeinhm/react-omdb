@@ -19,10 +19,7 @@ export default function MovieDetail() {
   return (
     <main className='detail-page'>
       <Navbar/>
-      <section>
-        <DetailMovie/>
-        <a href="http://www.omdbapi.com/" target="_blank">Powered by OMDb API</a>
-      </section>
+      <DetailMovie/>
     </main>
   );
 }

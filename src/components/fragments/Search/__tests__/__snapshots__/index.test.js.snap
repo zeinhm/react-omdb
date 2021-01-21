@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/fragments/Search Search 1`] = `
+<div
+  className="search-box"
+>
+  <input
+    className="search-input"
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    placeholder="Search..."
+    type="text"
+    value=""
+  />
+  <input
+    className="search-btn spinner-inactive"
+    onClick={[Function]}
+    type="submit"
+  />
+</div>
+`;

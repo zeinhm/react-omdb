@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/layouts/PageBase PageBase 1`] = `
+<React.Fragment>
+  <div
+    className="modal"
+  >
+    
+  </div>
+</React.Fragment>
+`;

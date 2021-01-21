@@ -12,11 +12,15 @@ export default function Search(props) {
   const [chosenOption, setChosenOption] = useState('')
   const [options, setOptions] = useState([])
   
-  const { isLoadingAutoComplete } = useSelector(state => state.home)
+  const state = useSelector(state => state.home)
   
   useEffect(() => {
     if (list && keyword) setOptions(list)
   }, [list])
+
+  useEffect(() => {
+    if (!keyword) setOptions([])
+  }, [keyword])
 
   useEffect(() => {
     if (chosenOption) history.push(`/detail/?id=${chosenOption}`)
@@ -69,7 +73,7 @@ export default function Search(props) {
       return (
         <ul className="options">
           {options.map((i, idx) => {
-            let className
+            let className = ''
             if (idx === activeOption) {
               className = 'active'
             }
@@ -77,7 +81,7 @@ export default function Search(props) {
               return <li className={className} key={idx} onClick={() => onClickOption(i.imdbID)}>{i.Title}</li>
             }
           })}
-          {options.length > 5 && <li className={activeOption === 5 && 'active'} onClick={() => onClickSearch()}>... <span>&#x2192;</span></li>}
+          {options.length > 5 && <li className={activeOption === 5 ? 'active' :''} onClick={() => onClickSearch()}>... <span>&#x2192;</span></li>}
         </ul>
       )
     } 
@@ -87,7 +91,7 @@ export default function Search(props) {
     <div className='search-box'>
         <input className='search-input' onChange={e=>onChange(e.target)} onKeyDown={(e)=> onKeyDown(e)}
           placeholder='Search...' type="text" value={keyword}  />
-        <input className={`search-btn ${isLoadingAutoComplete ? 'spinner-active' : 'spinner-inactive'}`}
+        <input className={`search-btn ${state?.isLoadingAutoComplete ? 'spinner-active' : 'spinner-inactive'}`}
           onClick={()=>onClickSearch()}  type="submit"/>    
       {optionList()}
     </div>

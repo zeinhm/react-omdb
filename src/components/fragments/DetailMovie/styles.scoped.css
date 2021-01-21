@@ -1,6 +1,94 @@
+.detail-card{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container, .poster, .poster img {
+  border-radius: 20px 0;
+}
+
+.container {
+  display: flex;
+  background-color: white;
+  margin-top: 5rem;
+  width: 1024px;
+}
+
+.poster {
+  width: 670px;
+  height: 500px;
+}
+
+.poster img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.detail {
+  padding: 1.5rem 2rem;
+}
+
+.detail p {
+  margin: 2rem 0
+}
+
+.more-info  {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.more-info div {
+  margin: 2rem;
+}
+
+.actors h3 {
+  margin-bottom: 1rem;
+}
+
+.detail-page > a {
+  margin: 1rem auto;
+}
+
 .loading-wrapper {
   align-items: center;
   display: flex;
   justify-content: center;
   margin: 5rem;
 }
+
+@media(max-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .poster {
+    width: 100%;
+    height: 300px;
+  }
+  .more-info div {
+    margin: 1rem;
+  }
+}
+
+@media(max-width: 425px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+  /* .poster img {
+    width: 100%;
+  } */
+  .more-info div {
+    margin: 1rem;
+  }
+}
+
