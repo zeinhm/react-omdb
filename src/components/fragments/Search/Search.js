@@ -81,7 +81,9 @@ export default function Search(props) {
           }
         })}
         {!state.messageAutoComplete && options.length > 5 && <li className={activeOption === 5 ? 'active' :''} onClick={() => onClickSearch()}>... <span>&#x2192;</span></li>}
-        {state.messageAutoComplete && <li className='error'>{state.messageAutoComplete}</li>}
+        {(state.messageAutoComplete && keyword.trim() !== '' && !state.isLoadingGetMovies) && (
+          <li className='error'>{state.messageAutoComplete}</li>
+        )}
       </ul>
     )
   }
