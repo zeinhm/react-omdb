@@ -8,7 +8,7 @@ import './styles.scoped.css'
 
 export default function MovieList(props) {
   const history = useHistory()
-  const { dataShownMovies } = props
+  const { dataShownMovies, nothingLeft } = props
   const [openModal, setOpenModal] = useState(false)
   const [imgSrc, setImgSrc] = useState('')
   const defaultPoster = (e) => {
@@ -25,7 +25,7 @@ export default function MovieList(props) {
     setOpenModal(false)
   }
   return (
-    <div>
+    <div className='movie-list'>
       <ul>
         {
           dataShownMovies.length >= 1 && dataShownMovies.map((data, key) => (
@@ -45,6 +45,7 @@ export default function MovieList(props) {
             </li>
           )) 
         }
+        { nothingLeft && <p>There's nothing left</p>}
       </ul>
       <ModalPoster
         defaultPoster={defaultPoster}
@@ -57,11 +58,13 @@ export default function MovieList(props) {
 }
 
 MovieList.defaultProps = {
-  dataShownMovies: []
+  dataShownMovies: [],
+  nothingLeft: false
 }
 
 MovieList.propTypes = {
-  dataShownMovies: PropTypes.array
+  dataShownMovies: PropTypes.array,
+  nothingLeft: PropTypes.bool
 }
 
 export function ModalPoster({ defaultPoster, open, onClose, imgSrc }) {

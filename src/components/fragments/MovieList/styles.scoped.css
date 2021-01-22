@@ -1,3 +1,10 @@
+.movie-list > ul > p {
+  color: slategray;
+  font-style: italic;
+  margin-top: 2rem;
+  text-align: center;
+}
+
 .card-movie {
   background-color: #FFFFFF;
   border-radius: 20px 0;

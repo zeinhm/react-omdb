@@ -21,9 +21,10 @@ export default function Home() {
   const [alert, setAlert] = useState(false);
   const [autoCompleteList, setAutoCompleteList] = useState([])
   const [isBottom, setIsBottom] = useState(false);
+  const [nothingLeft, setNothingLeft] = useState(false);
   const [keyword, setKeyword] = useState('')
   const limit = 5, offset = 0
-  const { dataAutoComplete, dataPage, dataShownMovies, dataStoreMovies,
+  const { dataAutoComplete, dataGetMovies, dataPage, dataShownMovies, dataStoreMovies,
     isLoadingGetMovies, messageGetMovies } = useSelector(state => state.home)
   
   function handleScroll() {
@@ -77,7 +78,11 @@ export default function Home() {
         search: keyword,
         page: dataPage + 1
       }
-      dispatch(getMovies(payload, offset, limit))
+      if(dataStoreMovies.length !== parseInt(dataGetMovies.totalResults) ) {
+        dispatch(getMovies(payload, offset, limit))
+      } else {
+        setNothingLeft(true)
+      }
     } else {
       dispatch(getShownMovies(dataStoreMovies))
     }
@@ -119,6 +124,7 @@ export default function Home() {
           />
         <MovieList
           dataShownMovies={dataShownMovies}
+          nothingLeft={nothingLeft}
           />
         <div className='loading-wrapper'>
           <PropagateLoader
