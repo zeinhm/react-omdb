@@ -68,7 +68,7 @@ export default function Home() {
   }, [messageGetMovies]);
 
   useEffect(() => {
-    if (!alert) dispatch(failedAction('', 'Update'));
+    if (!alert) dispatch(failedAction('', 'GetMovies'));
   }, [alert]);
 
   const addItems = () => {
@@ -119,7 +119,6 @@ export default function Home() {
           />
         <MovieList
           dataShownMovies={dataShownMovies}
-          onClick={onClick}
           />
         <div className='loading-wrapper'>
           <PropagateLoader
