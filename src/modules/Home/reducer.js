@@ -8,7 +8,8 @@ const initialState = {
   dataStoreMovies: [],
   isLoadingAutoComplete: false,
   isLoadingGetMovies: false,
-  message: ''
+  messageAutoComplete: '',
+  messageGetMovies: ''
 };
 
 export default function reducer(state = initialState, action) {
@@ -18,7 +19,7 @@ export default function reducer(state = initialState, action) {
     case FAILED:
       return {
         ...state,
-        message,
+        [`message${key}`]:message,
         [`isLoading${key}`]: false,
       };
     case LOADING:

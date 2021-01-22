@@ -68,23 +68,25 @@ export default function Search(props) {
     }
   }
 
+  console.log(options)
+  console.log(state.messageAutoComplete)
+
   const optionList = () => {
-    if(options?.length) {
-      return (
-        <ul className="options">
-          {options.map((i, idx) => {
-            let className = ''
-            if (idx === activeOption) {
-              className = 'active'
-            }
-            if (idx < 5) {
-              return <li className={className} key={idx} onClick={() => onClickOption(i.imdbID)}>{i.Title}</li>
-            }
-          })}
-          {options.length > 5 && <li className={activeOption === 5 ? 'active' :''} onClick={() => onClickSearch()}>... <span>&#x2192;</span></li>}
-        </ul>
-      )
-    } 
+    return (
+      <ul className="options">
+        {options?.length >= 1 && options.map((i, idx) => {
+          let className = ''
+          if (idx === activeOption) {
+            className = 'active'
+          }
+          if (idx < 5) {
+            return <li className={className} key={idx} onClick={() => onClickOption(i.imdbID)}>{i.Title}</li>
+          }
+        })}
+        {!state.messageAutoComplete && options.length > 5 && <li className={activeOption === 5 ? 'active' :''} onClick={() => onClickSearch()}>... <span>&#x2192;</span></li>}
+        {state.messageAutoComplete && <li className='error'>{state.messageAutoComplete}</li>}
+      </ul>
+    )
   }
   
   return (

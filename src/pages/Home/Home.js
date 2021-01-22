@@ -50,7 +50,7 @@ export default function Home() {
   }, [isBottom]);
 
   useEffect(() => {
-    if (search && keyword) dispatch(getAutoComplete({ page: 1, search }))
+    if (search && keyword) dispatch(getAutoComplete({ page: 1, search: search.trim() }))
   }, [search, keyword])
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function Home() {
   }, [dataAutoComplete])
 
   useEffect(() => {
-    if (message) {
+    if (message && (keyword.trim() !== '')) {
       setAlert(true);
     }
   }, [message]);
@@ -87,7 +87,7 @@ export default function Home() {
   const onChange = ({ value }) => {
     setKeyword(value)  
     const newQuery = queryString.stringify({ search: value });
-    history.push(`?${newQuery}`);
+    if(value.trim() !== '') history.push(`?${newQuery}`);
   }
 
   const onClick = () => {
