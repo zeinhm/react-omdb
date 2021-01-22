@@ -50,7 +50,7 @@ export default function Home() {
   }, [isBottom]);
 
   useEffect(() => {
-    if (search && keyword) dispatch(getAutoComplete({ page: 1, search: search.trim() }))
+    if (search && keyword) dispatch(getAutoComplete({ page: 1, search }))
   }, [search, keyword])
 
   useEffect(() => {
