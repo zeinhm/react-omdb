@@ -28,7 +28,7 @@ export function getMovies(payload, offset, limit) {
         dispatch(successAction({ movies, totalResults }, key))
         dispatch(setPage(payload.page))
         dispatch(failedAction(Error, key))
-        const separatedData = movies.slice(offset, limit)
+        const separatedData = movies?.slice(offset, limit)
         if (Response === "True") {
           if (shownMovie.length < 1 || currentPage < payload.page) {
             dispatch(getShownMovies([...shownMovie,...separatedData]))
