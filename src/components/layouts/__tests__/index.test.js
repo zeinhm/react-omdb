@@ -7,12 +7,20 @@ jest.mock('../../../contexts', () => ({
     content: '',
     setContent: jest.fn(),
   },
+  AlertContext: {
+    alert: '',
+    setAlert: jest.fn(),
+  },
 }));
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
   useContext: v => v,
   useEffect: cb => cb(),
+}));
+
+jest.mock('react-redux', () => ({
+  useDispatch: jest.fn(() => jest.fn()),
 }));
 
 describe('src/components/layouts/PageBase', ()=> {

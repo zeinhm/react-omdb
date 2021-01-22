@@ -1,0 +1,12 @@
+.alert-component {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 48em) {
+  .alert-component {
+    margin: 0 1rem;
+  }
+}

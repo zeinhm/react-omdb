@@ -3,6 +3,11 @@
 exports[`src/components/layouts/PageBase PageBase 1`] = `
 <React.Fragment>
   <div
+    className="alert"
+  >
+    
+  </div>
+  <div
     className="modal"
   >
     

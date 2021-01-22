@@ -7,11 +7,11 @@ export function getAutoComplete(payload) {
     dispatch(loadingAction(true, key))
 
     fetchMovies(payload)
-      .then(({ Search : movies }) => dispatch(successAction(movies, key)))
-      .catch(error => {
-        dispatch(failedAction(error, key))
-        console.log(error)
+      .then(({ Error, Search : movies }) => {
+        dispatch(successAction(movies, key))
+        dispatch(failedAction(Error, key))
       })
+      .catch(({ Error }) => dispatch(failedAction(Error, key)))
   }
 }
 
@@ -24,10 +24,10 @@ export function getMovies(payload, offset, limit) {
     dispatch(loadingAction(true, key))
 
     fetchMovies(payload)
-      .then(({ Response, Search: movies, totalResults }) => {
+      .then(({ Error, Response, Search: movies, totalResults }) => {
         dispatch(successAction({ movies, totalResults }, key))
         dispatch(setPage(payload.page))
-
+        dispatch(failedAction(Error, key))
         const separatedData = movies.slice(offset, limit)
         if (Response === "True") {
           if (shownMovie.length < 1 || currentPage < payload.page) {
@@ -73,7 +73,7 @@ export function setPage(page) {
   }
 }
 
-function failedAction(message, key) {
+export function failedAction(message, key) {
   return { type: FAILED, message, key };
 }
 

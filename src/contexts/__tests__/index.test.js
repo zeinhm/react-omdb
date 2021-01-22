@@ -12,6 +12,6 @@ jest.mock('react', () => ({
 describe('src/contexts', () => {
   test('render', () => {
     const result = AppContextProvider({ children: 'tes' });
-    expect(result.props.children.props.children).toBe('tes');
+    expect(result.props.children.props.children.props.children).toBe('tes');
   });
 });

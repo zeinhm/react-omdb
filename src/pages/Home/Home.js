@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import { PropagateLoader } from "react-spinners";
 import queryString from 'querystring'
+import alertIcon from '../../assets/ic-alert.svg'
+import Alert from '../../components/elements/Alert';
 import MovieList from '../../components/fragments/MovieList'
 import Search from '../../components/fragments/Search'
 import Navbar from '../../components/fragments/Navbar'
-import { getAutoComplete, getMovies, getShownMovies, successAction } from '../../modules/Home/actions'
+import { failedAction, getAutoComplete, getMovies, getShownMovies, successAction } from '../../modules/Home/actions'
 
 import './styles.scoped.css'
 
@@ -15,12 +18,13 @@ export default function Home() {
   const history = useHistory();
   const location = useLocation();
   const { search = '' } = queryString.parse(location.search.replace('?', ''));
+  const [alert, setAlert] = useState(false);
   const [autoCompleteList, setAutoCompleteList] = useState([])
   const [isBottom, setIsBottom] = useState(false);
   const [keyword, setKeyword] = useState('')
   const limit = 5, offset = 0
-  const { dataAutoComplete, dataPage, dataShownMovies,
-    dataStoreMovies, isLoadingGetMovies } = useSelector(state => state.home)
+  const { dataAutoComplete, dataPage, dataShownMovies, dataStoreMovies,
+    isLoadingGetMovies, message } = useSelector(state => state.home)
   
   function handleScroll() {
     const scrollTop = (document.documentElement
@@ -46,8 +50,6 @@ export default function Home() {
   }, [isBottom]);
 
   useEffect(() => {
-    console.log(search)
-    console.log(keyword)
     if (search && keyword) dispatch(getAutoComplete({ page: 1, search }))
   }, [search, keyword])
 
@@ -58,6 +60,16 @@ export default function Home() {
       setAutoCompleteList([])
     }
   }, [dataAutoComplete])
+
+  useEffect(() => {
+    if (message) {
+      setAlert(true);
+    }
+  }, [message]);
+
+  useEffect(() => {
+    if (!alert) dispatch(failedAction('', 'Update'));
+  }, [alert]);
 
   const addItems = () => {
     if (dataStoreMovies.length === dataShownMovies.length) {
@@ -116,6 +128,34 @@ export default function Home() {
             />
         </div>
       </section>
+      <AlertError 
+        message={message}
+        onClose={setAlert}
+        open={alert}
+        />
     </main>
   );
 }
+
+export const AlertError = ({ message, onClose, open }) => {
+  return(
+    <Alert onClose={()=>onClose(false)} open={open}>
+      <div className={`alert-error`}>
+        <img alt="Warning" src={alertIcon}/>
+        <p>{message}</p>
+      </div>
+    </Alert>
+  );
+};
+
+AlertError.defaultProps = {
+  message: '',
+  onClose: () => {},
+  open: false,
+};
+
+AlertError.propTypes = {
+  message: PropTypes.string,
+  onClose: PropTypes.func,
+  open: PropTypes.bool,
+};

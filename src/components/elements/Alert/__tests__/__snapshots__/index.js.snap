@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/elements/Alert Content 1`] = `
+<section
+  className="alert-component"
+/>
+`;
