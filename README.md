@@ -21,7 +21,7 @@ React OMDb is a web app to access [OMDb API](http://www.omdbapi.com/). This proj
 
 ## How to use the Features
 - Type the movie title keyword on the search box
-- Chose the autocomplete option or just enter to see all results
+- Choose the autocomplete option or just enter to see all results
 - Scroll the page if there's many result
 - Click the poster to show popup
 - Click detail button to see the detail of movie
