@@ -38,7 +38,7 @@ export default function Search(props) {
     if (e.keyCode === 13) {
       if (activeOption === false) {
         setOptions([])
-        onSubmit()
+        onSubmit(e.target.value)
       } else if(activeOption === 5) {
         setOptions([])
         onClickSearch()
@@ -80,7 +80,8 @@ export default function Search(props) {
             return <li className={className} key={idx} onClick={() => onClickOption(i.imdbID)}>{i.Title}</li>
           }
         })}
-        {!state.messageAutoComplete && options.length > 5 && <li className={activeOption === 5 ? 'active' :''} onClick={() => onClickSearch()}>... <span>&#x2192;</span></li>}
+        {!state.messageAutoComplete && options.length > 5 && <li className={activeOption === 5 ? 'active' :''}
+          onClick={() => onClickSearch()}>... <span>&#x2192;</span></li>}
         {(state.messageAutoComplete && keyword.trim() !== '' && !state.isLoadingGetMovies) && (
           <li className='error'>{state.messageAutoComplete}</li>
         )}

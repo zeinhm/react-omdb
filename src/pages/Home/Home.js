@@ -50,7 +50,7 @@ export default function Home() {
   }, [isBottom]);
 
   useEffect(() => {
-    if (search && keyword) dispatch(getAutoComplete({ page: 1, search }))
+    if (search && keyword) dispatch(getAutoComplete({ page: 1, search: keyword }))
   }, [search, keyword])
 
   useEffect(() => {
@@ -74,7 +74,7 @@ export default function Home() {
   const addItems = () => {
     if (dataStoreMovies.length === dataShownMovies.length) {
       const payload = {
-        search,
+        search: keyword,
         page: dataPage + 1
       }
       dispatch(getMovies(payload, offset, limit))
@@ -84,25 +84,25 @@ export default function Home() {
     setIsBottom(false)
   };
 
-  const onChange = ({ value }) => {
-    setKeyword(value)  
-    const newQuery = queryString.stringify({ search: value });
-    if(value.trim() !== '') history.push(`?${newQuery}`);
-  }
+  const onChange = ({ value }) => setKeyword(value)  
 
   const onClick = () => {
-    const payload = { search, page: 1}
+    const payload = { search: keyword, page: 1}
     dispatch(getMovies(payload, offset, limit))
   }
 
-  const onSubmit = () => {
+  const onSubmit = value => {
     const payload = {
-      search,
+      search: value,
       page: 1
     }
+    const newQuery = queryString.stringify({ search: value });
+    history.push(`?${newQuery}`);
+
     setAutoCompleteList([])
     dispatch(successAction([], 'StoreMovies'))
-    dispatch(getMovies(payload, offset, limit))
+    dispatch(successAction([], 'ShownMovies'))
+    if (value.trim() !== '') dispatch(getMovies(payload, offset, limit))
   }
 
   return (
