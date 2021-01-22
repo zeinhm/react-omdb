@@ -43,11 +43,11 @@ export function getMovies(payload, offset, limit) {
           }
         } 
       })
-      .catch((error) => {
+      .catch(({Error}) => {
         dispatch(storeMovies([]))  
         dispatch(getShownMovies([]))  
-        dispatch(failedAction(error, key))
-        console.log(error)
+        dispatch(failedAction(Error, key))
+        console.log(Error)
       })
   }
 }

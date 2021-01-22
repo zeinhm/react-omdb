@@ -24,7 +24,7 @@ export default function Home() {
   const [keyword, setKeyword] = useState('')
   const limit = 5, offset = 0
   const { dataAutoComplete, dataPage, dataShownMovies, dataStoreMovies,
-    isLoadingGetMovies, message } = useSelector(state => state.home)
+    isLoadingGetMovies, messageGetMovies } = useSelector(state => state.home)
   
   function handleScroll() {
     const scrollTop = (document.documentElement
@@ -62,10 +62,10 @@ export default function Home() {
   }, [dataAutoComplete])
 
   useEffect(() => {
-    if (message && (keyword.trim() !== '')) {
+    if (messageGetMovies) {
       setAlert(true);
     }
-  }, [message]);
+  }, [messageGetMovies]);
 
   useEffect(() => {
     if (!alert) dispatch(failedAction('', 'Update'));
@@ -129,7 +129,7 @@ export default function Home() {
         </div>
       </section>
       <AlertError 
-        message={message}
+        message={messageGetMovies}
         onClose={setAlert}
         open={alert}
         />

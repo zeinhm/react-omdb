@@ -68,9 +68,6 @@ export default function Search(props) {
     }
   }
 
-  console.log(options)
-  console.log(state.messageAutoComplete)
-
   const optionList = () => {
     return (
       <ul className="options">
